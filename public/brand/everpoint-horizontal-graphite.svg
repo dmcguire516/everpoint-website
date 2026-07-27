@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="748" height="132" viewBox="0 0 748 132" role="img" aria-label="Everpoint logo"><g transform="translate(24 24)">
+  <g fill="#111417">
+    <rect x="0" y="3.625" width="66" height="11.25"/>
+    <rect x="0" y="36.375" width="53" height="11.25"/>
+    <rect x="0" y="69.125" width="66" height="11.25"/>
+  </g>
+  <path d="M0 0H16L38 61L60 0H76L45 84H31Z" transform="translate(84 0)" fill="#111417"/>
+  <path d="M0 0H62V12H15V36H48V48H15V72H62V84H0Z" transform="translate(169 0)" fill="#111417"/>
+  <path d="M0 0H39C58 0 69 10 69 25C69 36 63 44 52 48L75 81L72 84H57L37 51H15V84H0ZM15 12V39H38C49 39 54 34 54 25C54 16 49 12 38 12Z" transform="translate(244 0)" fill="#111417"/>
+  <path d="M0 0H39C59 0 70 11 70 28C70 46 58 56 38 56H15V84H0ZM15 12V44H37C49 44 55 39 55 28C55 17 49 12 37 12Z" transform="translate(333 0)" fill="#111417"/>
+  <path d="M40 0C67 0 81 15 81 42C81 69 67 84 40 84C13 84 0 69 0 42C0 15 13 0 40 0ZM40 13C23 13 16 23 16 42C16 61 23 71 40 71C57 71 65 61 65 42C65 23 57 13 40 13Z" transform="translate(414 0)" fill="#111417"/>
+  <path d="M0 0H15V84H0Z" transform="translate(512 0)" fill="#111417"/>
+  <path d="M0 0H16L58 61V0H73V84H57L15 23V84H0Z" transform="translate(541 0)" fill="#111417"/>
+  <path d="M4 0H70L74 4V13H45V84H29V13H0V4Z" transform="translate(626 0)" fill="#111417"/></g></svg>
