@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/ButtonLink";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -151,22 +152,26 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="contact" id="contact">
-          <div className="container contact__grid">
+        <section className="contact" id="contact" aria-labelledby="contact-heading">
+          <div className="container">
+            <div className="contact__intro">
             <div>
               <p className="eyebrow">Start a project</p>
-              <h2>Tell us what is not working.</h2>
+              <h2 id="contact-heading">Tell us what is not working.</h2>
             </div>
             <div className="contact__copy">
               <p>
-                We will help you understand the problem, decide what matters,
-                and build the right solution.
+                Share a little about your space and what you want technology
+                to do better. We’ll review it personally and follow up with a
+                clear next step.
               </p>
-              <a href="mailto:hello@everpoint.tech">
+              <a className="contact__alternate" href="mailto:hello@everpoint.tech">
                 hello@everpoint.tech
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
+            </div>
+            <ContactForm />
           </div>
         </section>
       </main>
