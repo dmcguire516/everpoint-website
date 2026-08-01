@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --graphite: #0d1117;
-  --charcoal: #17202a;
-  --slate: #52606d;
-  --steel-blue: #315f82;
-  --steel-blue-dark: #244761;
+  --graphite: #111417;
+  --charcoal: #111417;
+  --slate: #4a4f57;
+  --steel-blue: #2a5d8a;
+  --steel-blue-dark: #2a5d8a;
   --fog: #dce2e7;
-  --paper: #f4f3ef;
+  --paper: #f7f6f3;
   --white: #ffffff;
   --ink: #101419;
   --line-dark: rgba(255, 255, 255, 0.16);
@@ -529,6 +529,30 @@ a {
   text-transform: uppercase;
 }
 
+.proof {
+  background: var(--white);
+  border-bottom: 1px solid var(--line-light);
+}
+
+.proof__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.proof__grid p {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 8.5rem;
+  margin: 0;
+  padding: 2rem;
+  align-content: center;
+  border-left: 1px solid var(--line-light);
+}
+
+.proof__grid p:last-child { border-right: 1px solid var(--line-light); }
+.proof__grid strong { font-family: var(--font-heading); font-size: 1.05rem; letter-spacing: -0.02em; }
+.proof__grid span { color: var(--slate); font-size: 0.8rem; }
+
 .field label span {
   margin-left: 0.35rem;
   color: rgba(255, 255, 255, 0.48);
@@ -674,6 +698,9 @@ a {
   opacity: 0.6;
 }
 
+.contact-form__submit button:not(:disabled):hover,
+.contact-form__reset:hover { background: #c7dbe8; }
+
 .contact-form__submit p {
   margin: 0;
   color: rgba(255, 255, 255, 0.48);
@@ -793,6 +820,19 @@ a {
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .proof__grid { grid-template-columns: 1fr; }
+
+  .proof__grid p,
+  .proof__grid p:last-child {
+    min-height: auto;
+    padding-inline: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line-light);
+    border-left: 0;
+  }
+
+  .proof__grid p:last-child { border-bottom: 0; }
 
   .section-heading,
   .philosophy__grid,

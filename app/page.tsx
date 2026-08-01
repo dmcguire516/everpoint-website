@@ -91,9 +91,17 @@ export default function Home() {
             </div>
           </div>
           <div className="container hero__foot">
-            <span>Residential</span>
-            <span>Small business</span>
-            <span>Lowcountry</span>
+            <span>Homes</span>
+            <span>Small businesses</span>
+            <span>Charleston &amp; the Lowcountry</span>
+          </div>
+        </section>
+
+        <section className="proof" aria-label="Why choose Everpoint">
+          <div className="container proof__grid">
+            <p><strong>One accountable partner</strong><span>From design through long-term support</span></p>
+            <p><strong>Built around your space</strong><span>No one-size-fits-all packages</span></p>
+            <p><strong>Explained in plain English</strong><span>Clear choices, documentation, and handoff</span></p>
           </div>
         </section>
 
@@ -121,8 +129,9 @@ export default function Home() {
               <h2>Technology should fade into the background.</h2>
               <p>
                 The best systems are the ones you do not have to think about.
-                They are carefully planned, professionally integrated, and
-                dependable every day.
+                We plan for coverage, reliability, security, and serviceability
+                before installation begins—then leave you with a system you
+                understand and support you can reach.
               </p>
             </div>
           </div>
@@ -163,7 +172,8 @@ export default function Home() {
               <p>
                 Share a little about your space and what you want technology
                 to do better. We’ll review it personally and follow up with a
-                clear next step.
+                clear next step. We serve Charleston and surrounding Lowcountry
+                communities.
               </p>
               <a className="contact__alternate" href="mailto:hello@everpoint.tech">
                 hello@everpoint.tech
