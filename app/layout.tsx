@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   },
   description:
     "Everpoint designs, installs, and supports reliable technology for homes and small businesses throughout the Charleston Lowcountry.",
+  category: "technology",
+  creator: "Everpoint",
+  publisher: "Everpoint",
+  formatDetection: { email: false, address: false, telephone: false },
   applicationName: "Everpoint",
   keywords: [
     "technology integration",
@@ -48,6 +52,11 @@ export const metadata: Metadata = {
     description:
       "Reliable technology for homes and small businesses throughout the Charleston Lowcountry.",
     images: ["/og.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   icons: {
     icon: "/favicon.svg",

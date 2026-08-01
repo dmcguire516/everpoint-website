@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <Link href="/" className="site-header__brand">
+        <Link href="/" className="site-header__brand" aria-label="Everpoint home">
           <BrandMark />
         </Link>
         <nav aria-label="Primary navigation">

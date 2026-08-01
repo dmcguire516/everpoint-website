@@ -35,7 +35,24 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
+
+::selection { background: #a9c6da; color: var(--graphite); }
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  transform: translateY(-150%);
+  background: var(--white);
+  color: var(--graphite);
+  font-weight: 700;
+  transition: transform 180ms ease;
+}
+.skip-link:focus { transform: translateY(0); }
 
 a {
   color: inherit;
@@ -152,6 +169,14 @@ a {
   padding-block: 5rem;
 }
 
+.hero [data-reveal] { animation: hero-reveal 760ms cubic-bezier(.2,.8,.2,1) both; }
+.hero__visual[data-reveal] { animation-delay: 120ms; }
+
+@keyframes hero-reveal {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .hero h1 {
   max-width: 12ch;
   margin: 1.65rem 0 2rem;
@@ -198,7 +223,9 @@ a {
     background 180ms ease,
     color 180ms ease,
     border-color 180ms ease;
+  will-change: transform;
 }
+.button:hover { transform: translateY(-2px); }
 
 .button--primary {
   min-width: 13.5rem;
@@ -365,12 +392,17 @@ a {
   border-bottom: 1px solid var(--line-light);
   transition:
     background 220ms ease,
-    color 220ms ease;
+    color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .service-card:hover {
   background: var(--graphite);
   color: var(--white);
+  transform: translateY(-0.35rem);
+  box-shadow: 0 1.25rem 2.5rem rgba(17, 20, 23, 0.12);
+  z-index: 1;
 }
 
 .service-card__index {
@@ -406,7 +438,9 @@ a {
   position: absolute;
   right: 2rem;
   bottom: 2rem;
+  transition: transform 220ms ease;
 }
+.service-card:hover .service-card__arrow { transform: translate(0.2rem, -0.2rem); }
 
 .philosophy {
   background: var(--steel-blue-dark);
@@ -572,6 +606,10 @@ a {
   transition: border-color 180ms ease, background 180ms ease;
 }
 
+.field input:hover,
+.field select:hover,
+.field textarea:hover { border-color: rgba(255, 255, 255, 0.45); }
+
 .field input,
 .field select {
   min-height: 3.6rem;
@@ -713,7 +751,9 @@ a {
   padding: clamp(2rem, 5vw, 4rem);
   background: var(--paper);
   color: var(--ink);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
 }
+.contact-form__success:focus { outline: 0; }
 
 .contact-form__success > span {
   display: grid;
@@ -847,6 +887,9 @@ a {
 }
 
 @media (max-width: 620px) {
+  :root { --gutter: 1.25rem; --section: 5rem; }
+  .site-header__inner { min-height: 5.5rem; }
+  .brand-mark { width: 8.75rem; }
   .site-header__cta {
     font-size: 0;
   }
@@ -859,18 +902,27 @@ a {
     font-size: clamp(3.2rem, 15vw, 5rem);
   }
 
+  .hero__copy { padding: 6.5rem 0 3.5rem; }
+  .hero__lede { font-size: 1rem; }
+  .hero__actions { align-items: stretch; flex-direction: column; }
+  .hero__actions .button--primary { width: 100%; }
+
   .hero__foot {
     gap: 1rem;
     justify-content: space-between;
   }
+  .hero__foot span:nth-child(2) { display: none; }
 
   .services__grid {
     grid-template-columns: 1fr;
   }
 
   .service-card {
-    min-height: 20rem;
+    min-height: 17rem;
+    padding: 1.5rem;
   }
+  .service-card h3 { margin-top: 3rem; }
+  .service-card__arrow { right: 1.5rem; bottom: 1.5rem; }
 
   .process__list li {
     grid-template-columns: 3rem 1fr;
@@ -911,6 +963,8 @@ a {
   *,
   *::before,
   *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }

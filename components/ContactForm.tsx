@@ -50,6 +50,7 @@ export function ContactForm() {
   const [siteKey, setSiteKey] = useState("");
   const [configLoaded, setConfigLoaded] = useState(false);
   const widgetContainer = useRef<HTMLDivElement>(null);
+  const successMessage = useRef<HTMLDivElement>(null);
   const widgetId = useRef<string | undefined>(undefined);
   const loadedAt = useRef(0);
 
@@ -102,6 +103,10 @@ export function ContactForm() {
     return () => script.removeEventListener("load", renderWidget);
   }, [siteKey]);
 
+  useEffect(() => {
+    if (status === "success") successMessage.current?.focus();
+  }, [status]);
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
@@ -138,7 +143,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="contact-form__success" role="status" tabIndex={-1}>
+      <div className="contact-form__success" role="status" aria-live="polite" tabIndex={-1} ref={successMessage}>
         <span aria-hidden="true">✓</span>
         <p className="eyebrow">Message received</p>
         <h3>Thank you. We’ll be in touch.</h3>
@@ -152,7 +157,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="contact-form" noValidate onSubmit={handleSubmit}>
+    <form className="contact-form" noValidate onSubmit={handleSubmit} aria-busy={status === "submitting"}>
       <div className="contact-form__row">
         <Field id="contact-name" name="name" label="Name" autoComplete="name" error={errors.name} />
         <Field id="contact-email" name="email" label="Email" type="email" autoComplete="email" error={errors.email} />
@@ -161,7 +166,7 @@ export function ContactForm() {
         <Field id="contact-phone" name="phone" label="Phone" optional type="tel" autoComplete="tel" />
         <div className="field">
           <label htmlFor="contact-project-type">Project type</label>
-          <select id="contact-project-type" name="projectType" defaultValue="" aria-invalid={Boolean(errors.projectType)} aria-describedby={errors.projectType ? "contact-project-type-error" : undefined}>
+          <select id="contact-project-type" name="projectType" defaultValue="" autoComplete="off" aria-invalid={Boolean(errors.projectType)} aria-describedby={errors.projectType ? "contact-project-type-error" : undefined}>
             <option value="" disabled>Select one</option>
             {projectTypes.map((type) => <option key={type}>{type}</option>)}
           </select>
