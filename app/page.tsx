@@ -54,11 +54,12 @@ const process = [
 export default function Home() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <Header />
-      <main>
+      <main id="main-content">
         <section className="hero" id="top">
           <div className="container hero__grid">
-            <div className="hero__copy">
+            <div className="hero__copy" data-reveal>
               <p className="eyebrow">Technology integration · Charleston, SC</p>
               <h1>
                 Technology that
@@ -76,7 +77,7 @@ export default function Home() {
                 </ButtonLink>
               </div>
             </div>
-            <div className="hero__visual" aria-hidden="true">
+            <div className="hero__visual" aria-hidden="true" data-reveal>
               <div className="hero__frame">
                 <span className="hero__crosshair hero__crosshair--one" />
                 <span className="hero__crosshair hero__crosshair--two" />
